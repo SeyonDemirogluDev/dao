@@ -11,7 +11,7 @@ import "@openzeppelin/contracts/governance/extensions/GovernorSettings.sol";
 
 contract GovernorContract is Governor("Governor"), GovernorSettings, GovernorCountingSimple, GovernorVotes, GovernorVotesQuorumFraction, GovernorTimelockControl {
 
-  constructor(IVotes _token, TimelockController _timelock, uint256 _quorumPercentage, uint256 _votingPeriod, uint256 _votingDelay) GovernorSettings(_votingDelay, /* 1 block */ _votingPeriod /* 1 week */, 0 /* proposal threshold */) GovernorVotes(_token) GovernorVotesQuorumFraction(_quorumPercentage) GovernorTimelockControl(_timelock) {}
+  constructor(IVotes _token, TimelockController _timelock, uint256 _quorumPercentage, uint256 _votingPeriod, uint256 _votingDelay) GovernorSettings(_votingDelay /* 1 block */, _votingPeriod /* 1 week */, 0 /* proposal threshold */) GovernorVotes(_token) GovernorVotesQuorumFraction(_quorumPercentage) GovernorTimelockControl(_timelock) {}
 
   function votingDelay() public view override (IGovernor, GovernorSettings) returns (uint256) {
     return super.votingDelay();

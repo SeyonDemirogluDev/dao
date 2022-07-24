@@ -1,5 +1,5 @@
 # Decentralized Autonomous Organisation
-**A DAO or Decentralized Autonomous Organisation is controlled by a wide range of participants, called `governors`. DAOs act unpreventably on behalf of the governors' decisions without the need for mere mortals. Usually, governors hold the DAO's `governance token`, which acts like a share in the DAO, just like a share in a traditional organisation. The more governance tokens you own, the more voting power and sometimes more financial benefits you have, identical to a shareholder in a traditional organisation. However, algorithms are being introduced to counter this policy, because else a DAO could be monopolized fairly easily.**
+**A DAO or Decentralized Autonomous Organisation is controlled by a wide range of participants, called `governors`. DAOs act (unpreventably) on behalf of the governors' decisions without the need for mere mortals. Usually, governors hold the DAO's `governance token`, which acts like a share in the DAO, just like a share in a traditional organisation. The more governance tokens you own, the more voting power and sometimes more financial benefits you have, identical to a shareholder in a traditional organisation. However, algorithms are being introduced to counter this policy, because else a DAO could be monopolized fairly easily.**
 
 ## Governance
 **Main contract that controls the project**

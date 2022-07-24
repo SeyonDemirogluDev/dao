@@ -5,204 +5,209 @@
 **Main contract that controls the project**
 
 ```
+cancel()
+```
+*Cancels a transaction.*
+
+```
 castVote()
 ```
-*f*
+*Function to vote for a proposal.*
 
 ```
 castVoteBySig()
 ```
-*f*
+*Function to vote using voter's cryptographic signature.*
 
 ```
 castVoteWithReason()
 ```
-*f*
+*Function to vote and also give a reason why.*
 
 ```
 castVoteWithReasonAndParams()
 ```
-*f*
+*Function to vote and also give a reason why with additional parameters.*
 
 ```
 castVoteWithReasonAndParamsBySig()
 ```
-*f*
+*Function to vote, also give a reason why, have additional parameters and using the voter's cryptographic signature.*
 
 ```
 execute()
 ```
-*f*
+*Executes queued transaction.*
 
 ```
 onERC1155BatchReceived()
 ```
-*f*
+*This DAO utilizes ERC20.*
 
 ```
 onERC1155Received()
 ```
-*f*
-
-```
-propose()
-```
-*f*
-
-```
-queue()
-```
-*f*
-
-```
-relay()
-```
-*f*
+*This DAO utilizes ERC20.*
 
 ```
 onERC721Received()
 ```
-*f*
+*This DAO utilizes ERC20.*
+
+```
+propose()
+```
+*Create a new proposal.*
+
+```
+queue()
+```
+*Queue your proposal.*
+
+```
+relay()
+```
+*Relays a transaction or function call to an arbitrary target. If the executor is the governor itself, use of relay is redundant.*
 
 ```
 setProposalThreshold()
 ```
-*f*
+*Set the proposal threshold. Can only be performed through a governance proposal.*
 
 ```
 setVotingDelay()
 ```
-*f*
+*Set the voting delay. Can only be performed through a governance proposal.*
 
 ```
 setVotingPeriod()
 ```
-*f*
+*Set the voting period. Can only be performed through a governance proposal.*
 
 ```
 updateQuorumNumerator()
 ```
-*f*
+*Update the quorum numerator. Must be called through a governance proposal and new numerator must be smaller or equal to the denominator.*
 
 ```
-updateTimelock()
+getTimestamp()
 ```
-*f*
+*Gets current block timestamp + 15 seconds.*
 
 ```
-BALLOT_TYPEHASH()
+getTransactionId()
 ```
-*f*
-
-```
-COUNTING_MODE()
-```
-*f*
-
-```
-EXTENDED_BALLOT_TYPEHASH()
-```
-*f*
+*Get current tranaction ID.*
 
 ```
 getVotes()
 ```
-*f*
+*Voting power of an address at a specific block number.*
 
 ```
 getVotesWithParams()
 ```
-*f*
+*Voting power of an address at a specific block number, given additional encoded parameters.*
 
 ```
 hashProposal()
 ```
-*f*
+*Function used to build / rebuild the proposal ID from the proposal details.*
 
 ```
 hasVoted()
 ```
-*f*
+*Returns wether account has cast a vote on `proposalId`.*
+
+```
+MAX_DELAY
+```
+*Required for `timestamp` to be between `MIN_DELAY` and `MAX_DELAY`*
+
+```
+MIN_DELAY
+```
+*Required for `timestamp` to be between `MIN_DELAY` and `MAX_DELAY`*
 
 ```
 name()
 ```
-*f*
+*Name of the governor instance.*
+
+```
+owner()
+```
+*Returns address of smart contract deployer.*
 
 ```
 proposalDeadline()
 ```
-*f*
-
-```
-proposalEta()
-```
-*f*
+*Block number at which votes close.*
 
 ```
 proposalSnapshot()
 ```
-*f*
+*Block number used to retrieve user’s votes and quorum.*
 
 ```
 proposalThreshold()
 ```
-*f*
+*The number of votes required in order for a voter to become a proposer.*
 
 ```
 proposalVotes()
 ```
-*f*
+*Accessor to the internal vote counts.*
+
+```
+queued
+```
+*Returns true if transaction is queued. Throws if not.*
 
 ```
 quorum()
 ```
-*f*
+*Minimum number of cast voted required for a proposal to be successful.*
 
 ```
 quorumDenominator()
 ```
-*f*
+*Returns the quorum denominator.*
 
 ```
 quorumNumerator()
 ```
-*f*
+*Returns the current quorum numerator.*
 
 ```
 state()
 ```
-*f*
+*Current state of a proposal.*
 
 ```
 supportsInterface()
 ```
-*f*
-
-```
-timeLock()
-```
-*f*
+*Returns true if this contract implements the interface defined by interfaceId. Basically called externally by other protocols to check if they support your interface type.*
 
 ```
 token()
 ```
-*f*
+*Returns constructor param token address.*
 
 ```
 version()
 ```
-*f*
+*Version of the governor instance.*
 
 ```
 votingDelay()
 ```
-*f*
+*Delay in number of block, between when the proposal is created and the vote starts.*
 
 ```
 votingPeriod()
 ```
-*f*
+*Delay in number of blocks, between the vote start and end.*
 
 ## Time Lock
 **Delays transactions**
@@ -225,7 +230,7 @@ Cancel
 ```
 owner
 ```
-*Address of contract deployer.*
+*Returns address of smart contract deployer.*
 
 ```
 MIN_DELAY
@@ -238,9 +243,9 @@ MAX_DELAY
 *Required for `timestamp` to be between `MIN_DELAY` and `MAX_DELAY`*
 
 ```
-GRACE_PERIOD
+cancel()
 ```
-*Time for how long transaction can, after queued, be executed.*
+*Cancels transaction*
 
 ```
 queued
@@ -263,11 +268,6 @@ getTransactionId()
 *Required to get transaction ID of params for `execute()`*
 
 ```
-execute()
-```
-*Function that executes queued transaction. Execution must take place after given timestamp and before grace period.*
-
-```
 getTimestamp()
 ```
 *Gets current block timestamp + 15 seconds.*
@@ -278,112 +278,112 @@ getTimestamp()
 ```
 approve()
 ```
-*f*
+*Function to approve another address to spend your tokens on your behalf.*
 
 ```
 decreaseAllowance()
 ```
-*f*
+*Decrease amount of tokens approved address is allowed to transfer on your behalf.*
 
 ```
 increaseAllowance()
 ```
-*f*
+*Increase amount of tokens approved address is allowed to transfer on your behalf.*
 
 ```
 delegate()
 ```
-*f*
+*Delegate to another address.*
 
 ```
 delegateBySig()
 ```
-*f*
+*Delegate to another address with cryptographic signature.*
 
 ```
 permit()
 ```
-*f*
+*If address signature is valid, anyone can call permit to approve the spender to spend x amount of tokens from the owner.*
 
 ```
 transfer()
 ```
-*f*
+*Function enabling transfer of ERC20 tokens.*
 
 ```
 transferFrom()
 ```
-*f*
+*Transfer function specifically made for approved address to transfer tokens.*
 
 ```
 allowance()
 ```
-*f*
+*Determines how much tokens approved address is allowed to spend.*
 
 ```
 balanceOf()
 ```
-*f*
+*Returns token balance of any address.*
 
 ```
 checkpoints()
 ```
-*f*
+*Returns the `pos` checkpoint for account.*
 
 ```
 decimals()
 ```
-*f*
+*Decimals for ERC20 token, most of the time 18 decimals, meaning 0.000000000000000001 is the lowest amount allowed to transfer.*
 
 ```
 delegates()
 ```
-*f*
-
-```
-DOMAIN_SEPERATOR()
-```
-*f*
+*Get the address contract is currently delegating to.*
 
 ```
 getPastTotalSupply()
 ```
-*f*
+*Retrieve the total supply at the end of block number. This value is the sum of all balances, NOT the sum of all the delegated votes.*
 
 ```
 getPastVotes()
 ```
-*f*
+*Retrieve the number of votes for address at the end of block number.*
 
 ```
 getVotes()
 ```
-*f*
+*Gets the current votes balance for address.*
+
+```
+DOMAIN_SEPERATOR
+```
+*Returns the domain separator used in the encoding of the signature for `permit`*
 
 ```
 nonces()
 ```
-*f*
+*Returns the current nonce for owner. Must be included whenever a signature is generated for `permit`*
 
 ```
 name()
 ```
-*f*
+*Returns token name, like ETHER.*
 
 ```
 numCheckpoints()
 ```
-*f*
+*Get number of checkpoints for address.*
 
 ```
 symbol()
 ```
-*f*
+*Returns token symbol or ticker, like ETH.*
 
 ```
 totalSupply()
 ```
-*f*
+*Returns amount of all token in existence.*
 
 ## Treasury
 **Where the ETH is stored until it's transferred**
@@ -391,34 +391,34 @@ totalSupply()
 ```
 releaseFunds()
 ```
-*f*
+*Transfers all funds to `payee`*
 
 ```
 renounceOwnership()
 ```
-*f*
+*Removes ownership from contract.*
 
 ```
 transferOwnership()
 ```
-*f*
+*Transfers ownership of contract to another address.*
 
 ```
 isReleased
 ```
-*f*
+*True if funds are released, otherwise false.*
 
 ```
 payee
 ```
-*f*
+*Address of funds collector.*
 
 ```
 totalFunds
 ```
-*f*
+*Returns total funds of treasury.*
 
 ```
 owner
 ```
-*f*
+*Returns address of smart contract deployer.*
